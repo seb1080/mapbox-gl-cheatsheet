@@ -1,3 +1,5 @@
+import SUCCESS from './data/success'
+
 mapboxgl.accessToken =
   'pk.eyJ1Ijoic2ViMTA4MCIsImEiOiJjaXJuanlidGgwOTJ4ZmFtODV6eXRuaXV0In0.vzy6JGrTFN5ccvZw87b2yQ'
 
@@ -7,4 +9,16 @@ const MTL = {
   center: [-73.77, 45.55],
   zoom: 10
 }
+
+/* Create the map instance */
 const map = new mapboxgl.Map(MTL)
+
+/*  Add Success label */
+// map.on('load', () => map.addLayer(SUCCESS))
+
+/* Add Simple marker */
+const marker = new mapboxgl.Marker({
+  draggable: true
+})
+  .setLngLat([-73.77, 45.55])
+  .addTo(map)

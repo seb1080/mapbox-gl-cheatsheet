@@ -71,7 +71,46 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({4:[function(require,module,exports) {
+})({12:[function(require,module,exports) {
+module.exports = {
+  id: 'points',
+  type: 'symbol',
+  source: {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: [{
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [-73.77, 45.55]
+        }
+      }, {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [-71.77, 46.55]
+        }
+      }]
+    }
+  },
+  layout: {
+    'text-field': 'succès',
+    'text-size': 50,
+    'text-allow-overlap': true,
+    'text-ignore-placement': true,
+    'text-offset': [0, -0.32]
+  }
+};
+},{}],4:[function(require,module,exports) {
+'use strict';
+
+var _success = require('./data/success');
+
+var _success2 = _interopRequireDefault(_success);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2ViMTA4MCIsImEiOiJjaXJuanlidGgwOTJ4ZmFtODV6eXRuaXV0In0.vzy6JGrTFN5ccvZw87b2yQ';
 
 var MTL = {
@@ -79,9 +118,18 @@ var MTL = {
   style: 'mapbox://styles/mapbox/streets-v9',
   center: [-73.77, 45.55],
   zoom: 10
-};
-var map = new mapboxgl.Map(MTL);
-},{}],11:[function(require,module,exports) {
+
+  /* Create the map instance */
+};var map = new mapboxgl.Map(MTL);
+
+/*  Add Success label */
+// map.on('load', () => map.addLayer(SUCCESS))
+
+/* Add Simple marker */
+var marker = new mapboxgl.Marker({
+  draggable: true
+}).setLngLat([-73.77, 45.55]).addTo(map);
+},{"./data/success":12}],15:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -204,5 +252,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[11,4])
+},{}]},{},[15,4])
 //# sourceMappingURL=/dist/55cfdcbc42961cc5bcdd9d4840d90776.map

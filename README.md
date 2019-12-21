@@ -55,7 +55,7 @@ A Mapbox style is a document that defines the visual appearance of a map: what d
 - [Mapbox GL Docs](https://docs.mapbox.com/mapbox-gl-js/api/#map)
 - [The State of Vector Tiles](https://www.youtube.com/watch?v=se2cd3BMYRY)
 - [OpenLayers Workshop](https://openlayers.org/workshop/en/vectortile/map.html)
-- [geosandbox](https://joeyklee.github.io/geosandbox/hello-mapboxgl.html)
+- [geosandbox by joeyklee](https://joeyklee.github.io/geosandbox/hello-mapboxgl.html)
 
 ---
 

@@ -8,6 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "@turf/turf": "5.1.6",
     "mapbox-gl": "1.6.1"
   },
   "devDependencies": {
